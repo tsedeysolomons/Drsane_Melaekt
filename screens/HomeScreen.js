@@ -1,17 +1,17 @@
-//← Home screen
+import React from "react";
 import { View, Text, StyleSheet, ImageBackground } from "react-native";
 
 export default function HomeScreen() {
   return (
     <ImageBackground
-      source={require("../../assets/images/home_screen.jpg")}
+      source={{ uri: ".assets/images/home_screen.jpg" }} // Or use a local image
       style={styles.bg}
     >
       <View style={styles.overlay}>
         <Text style={styles.amharic}>
           በእንኳን ለእኛም እንዲኖር በአንተ የተመሰከረው ግንባር ነው
         </Text>
-        <Text style={styles.ref}>መዝሙር 60:4</Text>
+        <Text style={styles.verse}>መዝሙር ምዕራፍ 60:4</Text>
       </View>
     </ImageBackground>
   );
@@ -19,17 +19,14 @@ export default function HomeScreen() {
 
 const styles = StyleSheet.create({
   bg: { flex: 1, justifyContent: "center" },
-  overlay: {
-    backgroundColor: "rgba(0,0,0,0.5)",
-    padding: 20,
-  },
+  overlay: { padding: 20, backgroundColor: "rgba(0,0,0,0.4)" },
   amharic: {
     fontSize: 20,
-    fontFamily: "NotoEthiopic",
     color: "white",
+    fontFamily: "NotoEthiopic",
     textAlign: "center",
   },
-  ref: {
+  verse: {
     fontSize: 16,
     color: "white",
     textAlign: "center",
